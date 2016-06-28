@@ -19,6 +19,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func moustacheButton(sender: UIButton) {
+        
+    }
+    
+    @IBAction func hatButton(sender: UIButton) {
+        
+    }
+    
+    @IBAction func glassesButton(sender: UIButton) {
+        
+    }
+    
+    
+    
 
 
 }
