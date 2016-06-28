@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Rte-Nb-cdf">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Rte-Nb-cdf">
                                 <rect key="frame" x="170" y="0.0" width="260" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxH-Zf-E3B">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxH-Zf-E3B">
                                         <rect key="frame" x="0.0" y="0.0" width="106" height="40"/>
                                         <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="21"/>
                                         <state key="normal" title="Take Photo"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTB-l7-RCR">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTB-l7-RCR">
                                         <rect key="frame" x="141" y="0.0" width="119" height="40"/>
                                         <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="21"/>
                                         <state key="normal" title="Select Photo"/>
@@ -42,6 +43,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="101" height="39"/>
                                         <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="20"/>
                                         <state key="normal" title="Moustache"/>
+                                        <connections>
+                                            <action selector="Moustache:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kAr-AG-7ao"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxY-Ab-Gnu">
                                         <rect key="frame" x="161" y="0.0" width="33" height="39"/>
@@ -60,6 +64,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5m8-UB-Kts" secondAttribute="trailing" id="9Tt-Px-8jQ"/>
                             <constraint firstItem="5m8-UB-Kts" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Ty-3c-y0F"/>
+                            <constraint firstItem="Rte-Nb-cdf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="PYK-4f-Alt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L3F-Mh-Bv2" secondAttribute="bottom" constant="29" id="UCp-fo-lGS"/>
                             <constraint firstItem="5m8-UB-Kts" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fcT-s2-sTN"/>
                             <constraint firstItem="5m8-UB-Kts" firstAttribute="centerX" secondItem="L3F-Mh-Bv2" secondAttribute="centerX" id="qON-Kq-R9K"/>

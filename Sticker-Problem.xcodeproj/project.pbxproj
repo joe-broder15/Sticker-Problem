@@ -288,6 +288,7 @@
 				582B737F1D22EFD6001B73E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
