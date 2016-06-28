@@ -18,21 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Rte-Nb-cdf">
-                                <rect key="frame" x="170" y="0.0" width="260" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxH-Zf-E3B">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="40"/>
-                                        <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="21"/>
-                                        <state key="normal" title="Take Photo"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTB-l7-RCR">
-                                        <rect key="frame" x="141" y="0.0" width="119" height="40"/>
-                                        <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="21"/>
-                                        <state key="normal" title="Select Photo"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5m8-UB-Kts">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
@@ -66,12 +51,33 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Rte-Nb-cdf">
+                                <rect key="frame" x="170" y="20" width="260" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxH-Zf-E3B">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="40"/>
+                                        <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="21"/>
+                                        <state key="normal" title="Take Photo"/>
+                                        <connections>
+                                            <action selector="takePhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rH7-KH-OWF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTB-l7-RCR">
+                                        <rect key="frame" x="141" y="0.0" width="119" height="40"/>
+                                        <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="21"/>
+                                        <state key="normal" title="Select Photo"/>
+                                        <connections>
+                                            <action selector="selectPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V1I-xk-J96"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5m8-UB-Kts" secondAttribute="trailing" id="9Tt-Px-8jQ"/>
                             <constraint firstItem="5m8-UB-Kts" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Ty-3c-y0F"/>
-                            <constraint firstItem="Rte-Nb-cdf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="PYK-4f-Alt"/>
+                            <constraint firstItem="Rte-Nb-cdf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="PYK-4f-Alt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L3F-Mh-Bv2" secondAttribute="bottom" constant="29" id="UCp-fo-lGS"/>
                             <constraint firstItem="5m8-UB-Kts" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fcT-s2-sTN"/>
                             <constraint firstItem="5m8-UB-Kts" firstAttribute="centerX" secondItem="L3F-Mh-Bv2" secondAttribute="centerX" id="qON-Kq-R9K"/>
@@ -79,6 +85,9 @@
                             <constraint firstItem="5m8-UB-Kts" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="z8l-Us-6A7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="5m8-UB-Kts" id="eXN-cM-VKj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
