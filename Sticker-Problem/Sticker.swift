@@ -29,7 +29,7 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
 		self.addGestureRecognizer(rotate)
 		self.addGestureRecognizer(longPress)
 		
-		longPress.delegate = self
+		//longPress.delegate = self
 		rotate.delegate = self
 		pinch.delegate = self
 		pan.delegate = self
@@ -76,6 +76,7 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
 	}
 	
 	func handleLongPress(longPressGestureRecognizer: UILongPressGestureRecognizer!){
+		longPressGestureRecognizer.minimumPressDuration = 1.5
 		self.removeFromSuperview()
 	}
 	
