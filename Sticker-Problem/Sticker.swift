@@ -19,6 +19,10 @@ class Sticker: UIImageView {
 		                                 action: #selector(self.handlePan(_:))) //_: way to pass in the thing that called it: UIPanGestureRecogizer
 		
 		let rotate = UIRotationGestureRecognizer(target: self, action: #selector(self.handleRotate(_:)))
+		
+		let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.handlePinch(_:))) //_: way to pass in the thing that called it: UIPanGestureRecogizer
+		
+		self.addGestureRecognizer(pinch)
 		self.addGestureRecognizer(pan)
 		self.addGestureRecognizer(rotate)
 	}
@@ -29,7 +33,7 @@ class Sticker: UIImageView {
 	}
 	
 	func handlePan(panGestureRecognizer: UIPanGestureRecognizer!){
-					//Get the spot it is now
+			//Get the spot it is now
 			let translation = panGestureRecognizer.translationInView(panGestureRecognizer.view)
 			
 			if let view = panGestureRecognizer.view{
@@ -46,6 +50,14 @@ class Sticker: UIImageView {
 		if let view = rotateGestureRecognizer.view {
 			view.transform = CGAffineTransformRotate(view.transform, rotateGestureRecognizer.rotation)
 			rotateGestureRecognizer.rotation = 0
+		}
+	}
+	
+	func handlePinch(pinchGestureRecognizer: UIPinchGestureRecognizer){
+		if let view = pinchGestureRecognizer.view {
+			view.transform = CGAffineTransformScale(view.transform, pinchGestureRecognizer.scale, pinchGestureRecognizer.scale)
+			pinchGestureRecognizer.scale = 1
+			
 		}
 	}
 	
