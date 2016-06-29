@@ -17,7 +17,10 @@ class Sticker: UIImageView {
 		//#selector is to select the method, before it was just a string that was passed in
 		let pan = UIPanGestureRecognizer(target: self,
 		                                 action: #selector(self.handlePan(_:))) //_: way to pass in the thing that called it: UIPanGestureRecogizer
+		
+		let rotate = UIRotationGestureRecognizer(target: self, action: #selector(self.handleRotate(_:)))
 		self.addGestureRecognizer(pan)
+		self.addGestureRecognizer(rotate)
 	}
 	
 	//Required for any UIImageView class
@@ -26,10 +29,7 @@ class Sticker: UIImageView {
 	}
 	
 	func handlePan(panGestureRecognizer: UIPanGestureRecognizer!){
-		if panGestureRecognizer.state == .Began ||
-			panGestureRecognizer.state == .Changed
-		{
-			//Get the spot it is now
+					//Get the spot it is now
 			let translation = panGestureRecognizer.translationInView(panGestureRecognizer.view)
 			
 			if let view = panGestureRecognizer.view{
@@ -39,7 +39,16 @@ class Sticker: UIImageView {
 			}else{
 				print("No View")
 			}
+		
+	}
+	
+	func handleRotate(rotateGestureRecognizer: UIRotationGestureRecognizer!){
+		if let view = rotateGestureRecognizer.view {
+			view.transform = CGAffineTransformRotate(view.transform, rotateGestureRecognizer.rotation)
+			rotateGestureRecognizer.rotation = 0
 		}
 	}
+	
+	
 
 }

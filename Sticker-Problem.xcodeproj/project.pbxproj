@@ -99,7 +99,7 @@
 				TargetAttributes = {
 					582B736A1D22EFD6001B73E6 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = YEKNLFEALT;
+						DevelopmentTeam = 493DDHJJ42;
 					};
 				};
 			};
@@ -260,7 +260,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Sticker-Problem/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.admin.Sticker-Problem";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.admin.Sticker-ProblemPJ";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -274,7 +274,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Sticker-Problem/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.admin.Sticker-Problem";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.admin.Sticker-ProblemPJ";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
