@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Sticker: UIImageView {
+class Sticker: UIImageView, UIGestureRecognizerDelegate {
 
 	override init(image: UIImage?){
 		super.init(image: image)
@@ -21,16 +21,30 @@ class Sticker: UIImageView {
 		let rotate = UIRotationGestureRecognizer(target: self, action: #selector(self.handleRotate(_:)))
 		
 		let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.handlePinch(_:))) //_: way to pass in the thing that called it: UIPanGestureRecogizer
+		let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+
 		
 		self.addGestureRecognizer(pinch)
 		self.addGestureRecognizer(pan)
 		self.addGestureRecognizer(rotate)
+		self.addGestureRecognizer(tap)
+		
+		tap.delegate = self
+		rotate.delegate = self
+		pinch.delegate = self
+		pan.delegate = self
 	}
 	
 	//Required for any UIImageView class
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder) //or super.init(image:nil)
 	}
+	
+	
+	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+		return true
+	}
+	
 	
 	func handlePan(panGestureRecognizer: UIPanGestureRecognizer!){
 			//Get the spot it is now
@@ -59,6 +73,10 @@ class Sticker: UIImageView {
 			pinchGestureRecognizer.scale = 1
 			
 		}
+	}
+	
+	func handleTap(tapGestureRecognizer: UITapGestureRecognizer!){
+		
 	}
 	
 	
