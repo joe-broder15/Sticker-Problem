@@ -21,15 +21,15 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
 		let rotate = UIRotationGestureRecognizer(target: self, action: #selector(self.handleRotate(_:)))
 		
 		let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.handlePinch(_:))) //_: way to pass in the thing that called it: UIPanGestureRecogizer
-		let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-
+		
+		let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
 		
 		self.addGestureRecognizer(pinch)
 		self.addGestureRecognizer(pan)
 		self.addGestureRecognizer(rotate)
-		self.addGestureRecognizer(tap)
+		self.addGestureRecognizer(longPress)
 		
-		tap.delegate = self
+		longPress.delegate = self
 		rotate.delegate = self
 		pinch.delegate = self
 		pan.delegate = self
@@ -48,15 +48,15 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
 	
 	func handlePan(panGestureRecognizer: UIPanGestureRecognizer!){
 			//Get the spot it is now
-			let translation = panGestureRecognizer.translationInView(panGestureRecognizer.view)
-			
-			if let view = panGestureRecognizer.view{
-				let affinerTransformTranslate = CGAffineTransformTranslate(view.transform, translation.x, translation.y)
-				view.transform = affinerTransformTranslate
-				panGestureRecognizer.setTranslation(CGPointZero, inView: view)
-			}else{
-				print("No View")
-			}
+		let translation = panGestureRecognizer.translationInView(panGestureRecognizer.view)
+		
+		if let view = panGestureRecognizer.view{
+			let affinerTransformTranslate = CGAffineTransformTranslate(view.transform, translation.x, translation.y)
+			view.transform = affinerTransformTranslate
+			panGestureRecognizer.setTranslation(CGPointZero, inView: view)
+		}else{
+			print("No View")
+		}
 		
 	}
 	
@@ -75,8 +75,8 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
 		}
 	}
 	
-	func handleTap(tapGestureRecognizer: UITapGestureRecognizer!){
-		
+	func handleLongPress(longPressGestureRecognizer: UILongPressGestureRecognizer!){
+		self.removeFromSuperview()
 	}
 	
 	
