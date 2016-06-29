@@ -42,27 +42,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 		alertController.addAction(cancelAction)
 		
 		let moustType1 = UIAlertAction(title: "Moustache type 1", style: .Default) { (action) in
-			let imageViewObject = UIImageView(frame:CGRectMake(60, 220, 212.5, 96.5))
+			//let imageViewObject = UIImageView(frame:CGRectMake(60, 220, 212.5, 96.5))
 			
-			imageViewObject.image = UIImage(named:"mustache1")
+			let mustache1 = Sticker(image: UIImage(named:"mustache1"))
 			
-			self.view.addSubview(imageViewObject)
+			self.view.addSubview(mustache1)
 		}
 		
 		let moustType2 = UIAlertAction(title: "Moustache type 2", style: .Default) { (action) in
-			let imageViewObject = UIImageView(frame:CGRectMake(50, 250, 271, 100))
+			//let imageViewObject = UIImageView(frame:CGRectMake(50, 250, 271, 100))
 			
-			imageViewObject.image = UIImage(named:"mustache2")
+			let mustache2 = Sticker(image: UIImage(named:"mustache2"))
 			
-			self.view.addSubview(imageViewObject)
+			self.view.addSubview(mustache2)
 		}
 		
 		let moustType3 = UIAlertAction(title: "Moustache type 3", style: .Default) { (action) in
-			let imageViewObject = UIImageView(frame:CGRectMake(50, 270, 266, 98))
+			//let imageViewObject = UIImageView(frame:CGRectMake(50, 270, 266, 98))
 			
-			imageViewObject.image = UIImage(named:"mustache3")
+			let mustache3 = Sticker(image: UIImage(named:"mustache3"))
 			
-			self.view.addSubview(imageViewObject)
+			self.view.addSubview(mustache3)
 		}
 		
 		alertController.addAction(moustType1)
@@ -77,21 +77,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBAction func hatButton(sender: UIButton) {
 		
-		let imageViewObject = UIImageView(frame:CGRectMake(0, 30, 332, 205))
+		//let imageViewObject = UIImageView(frame:CGRectMake(0, 30, 332, 205))
 		
-		imageViewObject.image = UIImage(named:"hat1")
+		let hat1 = Sticker(image: UIImage(named:"hat1"))
 		
-		self.view.addSubview(imageViewObject)
+		self.view.addSubview(hat1)
 		
 		
     }
     
     @IBAction func glassesButton(sender: UIButton) {
-		let imageViewObject = UIImageView(frame:CGRectMake(0, 150, 342, 144))
+		//let imageViewObject = UIImageView(frame:CGRectMake(0, 150, 342, 144))
 		
-		imageViewObject.image = UIImage(named:"eyeglasses1")
+		let eyeglasses1 = Sticker(image: UIImage(named:"eyeglasses1"))
 		
-		self.view.addSubview(imageViewObject)
+		self.view.addSubview(eyeglasses1)
     }
 
     @IBAction func takePhotoButton(sender: UIButton) {
